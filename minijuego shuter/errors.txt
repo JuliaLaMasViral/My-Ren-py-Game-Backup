@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 21: unexpected indent
+            current_index = difficulties.index(current_difficulty)
+            ^
+
+Ren'Py Version: Ren'Py 8.2.0.24012702
+Mon Mar  4 19:07:17 2024

@@ -1,0 +1,46 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 185, in script
+    call screen simondice_menu
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 185, in script
+    call screen simondice_menu
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/ast.py", line 1968, in execute
+    self.call("execute")
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/ast.py", line 1950, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/statements.py", line 349, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 671, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/exports.py", line 3413, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/core.py", line 3192, in interact_core
+    rv = renpy.display.focus.mouse_handler(ev, x, y)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/focus.py", line 605, in mouse_handler
+    return change_focus(new_focus, default=default)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/focus.py", line 531, in change_focus
+    set_focused(current, newfocus.arg, newfocus.screen)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/focus.py", line 201, in set_focused
+    new_tooltip = widget._get_tooltip()
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/behavior.py", line 943, in _get_tooltip
+    return get_tooltip(self.action)
+  File "/home/jizquierdo/Escriptori/renpy-8.2.0-sdkarm/renpy/display/behavior.py", line 448, in get_tooltip
+    return func()
+TypeError: get_tooltip() missing 1 required positional argument: 'self'
+
+Linux-6.5.0-15-generic-x86_64-with-glibc2.35 x86_64
+Ren'Py 8.2.0.24012702
+minijuego shuter 1.0
+Mon Mar  4 19:28:19 2024
