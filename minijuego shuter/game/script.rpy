@@ -71,14 +71,14 @@ init python:
             selected_button_index += 1
             renpy.restart_interaction()
             renpy.show_screen("game_over")
-            renpy.hide_screen("simondice")
+            renpy.hide_screen("simonsay")
         if correct_picks == len(current_button_pattern):
-            renpy.show_screen("simondice_menu")
+            renpy.show_screen("simonsay_menu")
             renpy.transitions(fade(1,0,1))
-            renpy.hide_screen("simondice")
+            renpy.hide_screen("simonsay")
 
 
-    def reset_simon_dice():
+    def reset_simon_say():
         global current_button_index
         global selected_button_index
         global input_ready
@@ -98,7 +98,7 @@ init python:
         green_button_lit = False
         yellow_button_lit = False
 
-        current_difficulty = "easy"  # Asignar un valor a current_difficulty
+        current_difficulty = "easy"  
         current_button_pattern = create_button_pattern(current_difficulty)
 
     renpy.restart_interaction()
@@ -122,7 +122,7 @@ screen game_over:
             imagebutton idle "UI/quit-button.png" action [Hide("game_over"), Show("main_menu")] align (0.8, 0.8) at half_size
   
             
-screen simondice:
+screen simonsay:
     on "show" action Function(reset_simon_dice)
     image "background.png"
     if red_button_lit:
@@ -148,7 +148,7 @@ screen simondice:
         #block of code to run:
         timer 0.5 action Function(off_buttons) repeat True
 
-screen simondice_menu:
+screen simonsay_menu:
     modal True
     image "background.png"
     frame:
@@ -183,6 +183,6 @@ label start:
     $ correct_picks = 0
     $ user_picks = 0
     $ selected_button_index = 0
-    call screen simondice_menu
+    call screen simonsay_menu
     return
 
